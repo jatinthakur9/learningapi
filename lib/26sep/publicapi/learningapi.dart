@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:learningapi/26sep/apiii.dart';
+import 'package:learningapi/26sep/publicapi/apiii.dart';
 
 class Apigetlearn extends StatefulWidget {
   const Apigetlearn({super.key});
@@ -13,12 +13,12 @@ class _ApigetlearnState extends State<Apigetlearn> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: FutureBuilder(
-        future: Api().getData(),
+        future: jpi().FetchDataIN(),
         builder: (context, snapshot) {
           return ListView.builder(
             itemCount: 10,
             itemBuilder: (context, index) {
-              return Text(snapshot.data['entries'][index]['Auth']);
+              return Text(snapshot.data['entries'][index]['API']);
             },
           );
         },

@@ -1,6 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:learningapi/18sep.dart';
-import 'package:learningapi/26sep/learningapi.dart';
+import 'package:learningapi/26sep/bored/boredscreen.dart';
+import 'package:learningapi/26sep/catfatcs/carfactsshow.dart';
+import 'package:learningapi/26sep/coindesk/coindesks.dart';
+import 'package:learningapi/26sep/dogs/dogsscreen.dart';
+import 'package:learningapi/26sep/oldtask.dart';
+import 'package:learningapi/26sep/publicapi/learningapi.dart';
+import 'package:learningapi/26sep/task/taskscreen.dart';
 import 'package:learningapi/5sep/movedata.dart';
 
 void main() {
@@ -20,7 +26,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: Apigetlearn(),
+      home: oldtask(),
     );
   }
 }

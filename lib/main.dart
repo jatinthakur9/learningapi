@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:learningapi/18sep.dart';
+import 'package:learningapi/27sep/navigator.dart';
+import 'package:learningapi/threescreen/18sep.dart';
 import 'package:learningapi/26sep/bored/boredscreen.dart';
 import 'package:learningapi/26sep/catfatcs/carfactsshow.dart';
 import 'package:learningapi/26sep/coindesk/coindesks.dart';
@@ -26,7 +27,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: oldtask(),
+      home: Navvigatorr(),
     );
   }
 }

@@ -1,14 +1,25 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
+import 'package:learningapi/27sep/post/loginmodeapi2.dart';
 import 'package:learningapi/27sep/post/loginmodel.dart';
 import 'package:learningapi/27sep/post/postapi.dart';
+import 'package:learningapi/27sep/post/secondscreem.dart';
 
-class Login extends StatelessWidget {
+class Login extends StatefulWidget {
   Login({Key? key}) : super(key: key);
 
+  @override
+  State<Login> createState() => _LoginState();
+}
+
+class _LoginState extends State<Login> {
   TextEditingController email = TextEditingController();
+
   TextEditingController pass = TextEditingController();
+
   Loginmode? data;
+
+  //twoapimode? data1;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -47,11 +58,20 @@ class Login extends StatelessWidget {
             ),
             const Gap(10),
             ElevatedButton(
-                onPressed: () {
-                  postapi().logindata(email.text, pass.text).then((value) {
-                    data = value;
-                    // print(data);
+                onPressed: () async {
+                  await postapi()
+                      .logindata(email.text, pass.text)
+                      .then((value) {
+                    setState(() {
+                      data = value;
+                    });
+                    print(data!.details!.name);
                   });
+                  Navigator.push(context, MaterialPageRoute(
+                    builder: (context) {
+                      return Sendscreen(j: data!.details!.id!);
+                    },
+                  ));
                 },
                 child: const Center(child: Text('Login')))
           ],

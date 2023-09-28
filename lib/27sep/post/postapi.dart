@@ -1,10 +1,10 @@
 import 'dart:convert';
 
 import 'package:dio/dio.dart';
+import 'package:learningapi/27sep/post/loginmodel.dart';
 
 class postapi {
   var dio = Dio();
-  var data;
 
   Future getdata() async {
     Response response = await dio
@@ -21,10 +21,10 @@ class postapi {
     Response response = await dio.post(
         'https://healthkangaroo.com/index.php/api/HkVendor/userLogin',
         data: formdata);
+    var data = jsonDecode(response.data);
+    var data2 = Loginmode.fromJson(data);
 
-    data = jsonDecode(response.data);
-    print(data);
-
-    return data;
+    print(data2.message);
+    return data2;
   }
 }

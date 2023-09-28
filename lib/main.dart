@@ -1,14 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:learningapi/27sep/navigator.dart';
-import 'package:learningapi/threescreen/18sep.dart';
-import 'package:learningapi/26sep/bored/boredscreen.dart';
-import 'package:learningapi/26sep/catfatcs/carfactsshow.dart';
-import 'package:learningapi/26sep/coindesk/coindesks.dart';
-import 'package:learningapi/26sep/dogs/dogsscreen.dart';
-import 'package:learningapi/26sep/oldtask.dart';
-import 'package:learningapi/26sep/publicapi/learningapi.dart';
-import 'package:learningapi/26sep/task/taskscreen.dart';
-import 'package:learningapi/5sep/movedata.dart';
+import 'package:learningapi/27sep/post/leaningpostloginscreen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -27,7 +18,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: Navvigatorr(),
+      home: Login(),
     );
   }
 }
